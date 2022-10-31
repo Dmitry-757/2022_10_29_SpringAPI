@@ -21,6 +21,11 @@ public class CurrencyController {
         return new Messages.OutMessage("USD", "RUB", 1);
     }
 
+    @GetMapping(path = "status")
+    public String status(){
+        return "Cat Matroskin is very busy, his status is: 'lies on the stove'";
+    }
+
     @PostMapping(path = "convert")
     public IMessage convert(@RequestBody Messages.InMessage inMessage){
         return converterService.convert(inMessage);
