@@ -18,7 +18,7 @@ public class CurrencyController {
 
     @GetMapping(path = "ping")
     public IMessage ping(){
-        return new Messages.OutMessage(Messages.Currency.USD, Messages.Currency.RUB, 1);
+        return new Messages.OutMessage("USD", "RUB", 1);
     }
 
     @PostMapping(path = "convert")

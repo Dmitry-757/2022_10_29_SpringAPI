@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 public class ConverterService {
 
-    public double getRate(Messages.Currency currency){
+    public double getRate(String currency){
 
 //        //приводим все к usd
 //        float amountUSD = switch (inCurrency){
@@ -26,12 +26,12 @@ public class ConverterService {
 //            case RUB -> 61.0F;
 //            case EUR -> 1F/1.2F;
 //        };
-        if (currency == Messages.Currency.RUB ){
+        if (currency.equals("RUB") ){
             return 1;
         }
-        else if (AppInit.getCurrencyList().getValute().containsKey(currency.toString())){
+        else if (AppInit.getCurrencyList().getValute().containsKey(currency)){
             Map<String, Map<String, Object>> valuteMap = AppInit.getCurrencyList().getValute();
-            Map<String, Object> valute = valuteMap.get(currency.toString());
+            Map<String, Object> valute = valuteMap.get(currency);
             Object value = valute.get("Value");
             return (double) Optional.ofNullable(value).orElse(0F);
         }

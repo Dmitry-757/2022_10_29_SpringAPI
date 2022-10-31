@@ -3,16 +3,17 @@ package org.dng.springApi_2022_10_29.DTO;
 
 public class Messages {
 
-    public record InMessage(Currency inCurrency, Currency outCurrency, double value) implements IMessage {
-        public InMessage(Currency inCurrency, Currency outCurrency, double value) {
+//    public record InMessage(Currency inCurrency, Currency outCurrency, double value) implements IMessage {
+public record InMessage(String inCurrency, String outCurrency, double value) implements IMessage {
+        public InMessage(String inCurrency, String outCurrency, double value) {
             this.inCurrency = inCurrency;
             this.outCurrency = outCurrency;
             this.value = value;
         }
     }
 
-    public record OutMessage(Currency inCurrency, Currency outCurrency, double value) implements IMessage {
-        public OutMessage(Currency inCurrency, Currency outCurrency, double value) {
+    public record OutMessage(String inCurrency, String outCurrency, double value) implements IMessage {
+        public OutMessage(String inCurrency, String outCurrency, double value) {
             this.inCurrency = inCurrency;
             this.outCurrency = outCurrency;
             this.value = value;
@@ -37,9 +38,9 @@ public class Messages {
 //    }
 
 
-    public enum Currency{
-        USD,
-        RUB,
-        EUR
-    }
+//    public enum Currency{
+//        USD,
+//        RUB,
+//        EUR
+//    }
 }
